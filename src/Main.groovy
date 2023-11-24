@@ -386,6 +386,7 @@ def models = cars*.model*//*
 println makes
 println models
 */
+/*
 
 class Component {
     Integer id
@@ -405,3 +406,58 @@ class CompositeObject implements Iterable<Component> {
 def comp = new CompositeObject()
 println comp*.id
 println comp*.name
+*/
+
+/*
+list = [0,1,2,3,4]
+list[0..2] = [6,6,6]
+println(list[0..2])*/
+
+/*
+class User {
+    Long id
+    String name
+
+
+    def getAt(int i) {
+        switch (i) {
+            case 0: return id
+            case 1: return name
+        }
+        throw new IllegalArgumentException("No such element $i")
+    }
+
+    void putAt(int i, def value) {
+        switch (i) {
+            case 0: id = value; return
+            case 1: name = value; return
+        }
+        throw new IllegalArgumentException("No such element $i")
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
+
+def user = new User(id: 1, name: 'Alex')
+user[1] = 'Bob'
+user[0] = 5
+print(user)*/
+
+/*
+def numbers = [1, 2, 3, 4, 5]
+def thirdElement = numbers?[5]
+println("Third Element: $thirdElement")
+*/
+
+def list1 = ['Groovy 1.8','Groovy 2.0','Groovy 2.3']
+def list2 = ['Groovy 1.8','Groovy 2.0','Groovy 2.3']
+list1 = list2
+//print list1 == list2
+print !list1.is(list2)
+print list1 !== list2
