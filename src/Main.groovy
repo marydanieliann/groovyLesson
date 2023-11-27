@@ -52,16 +52,7 @@
 ////assert person.name == 'NAME'
 
 
-//def name = 'Zachary'
-//def x  = 3
-//def y = 7
-//def groovyStr = "Hello ${name}, $x * $y equals ${x*y}"
-//assert groovyStr == 'Hello Zachary, 3 * 7 equals 21'
 
-//def name = 'Dave'
-//def c = {println "$name called this closure ${it+1} time${it > 0 ? 's' : ''}"}
-//assert c instanceof Closure
-//5.times(c)
 
 //def colors = ['red', 'green', 'blue', 'yellow']
 //def empty = []
@@ -118,37 +109,8 @@
 //println emp.address
 //
 //
-//public class Y {
-//    class X {}
-//    X foo() {
-//        return new X()
-//    }
-//    static X createX(Ynew y) {
-//        return new X(y)
-//    }
-//    static void main(String[] args) {
-//        def y = new Y();
-//        def x = new X(y);
-//        x.foo();
-//        createX(y);
-//        println("Test" + "" + x)
-//    }
-//}
 /*
 
-class Y {
-    class X {}
-    X foo() {
-        new X()
-    }
-    static X createX(Y y) {
-        new X(y)
-    }
-}
-
-def yInstance = new Y()
-def xInstance = yInstance.foo()
-println xInstance
 
 def a = 2
 def b = a++ * 3
@@ -197,36 +159,6 @@ true && checkIfCalled()
 println called
 */
 
-//print((!'foo') == false)
-//def strippedFirstNewline = '''\
-//line one
-//line two
-//line three
-//'''
-//
-//def startingAndEndingWithANewline = '''
-//line one
-//line two
-//line three
-//'''
-//
-//def escapeSlash = /The character \/ is a forward slash/
-//
-//
-//def multilineSlashy = /one
-//    two
-//    three/
-//println(multilineSlashy)
-//println(multilineSlashy.contains('\n'))
-//
-//println(escapeSlash)
-//
-//print(strippedFirstNewline)
-//
-//println(startingAndEndingWithANewline)
-//
-//println(!strippedFirstNewline.startsWith('\n'))
-//
 //class F {
 //    float f1 = 1.0f
 //    Float f2 = 2.0f
@@ -294,41 +226,6 @@ println called
 //        println(a<10?:'greater than 10')
 //    }
 //}
-
-// domain
-/*
-import groovy.transform.ToString
-
-@ToString(includePackage = false)
-class Element {
-    String name
-    int atomicNumber
-}
-//controller
-def he = new Element(name: 'Helium')
-def he1 = new Element(name: 'Hydrogen')
-he.with {it ->
-    name = name ?: 'NameOfElement'
-    atomicNumber =  atomicNumber ?: 2
-    println(it)
-}
-he1.with {it ->
-    name = name ?: 'NameOfElement'
-    atomicNumber =  atomicNumber ?: 4
-    println(it)
-}
-
-def names = ['Alice', 'Bob', 'Charlie']
-names.findAll { name ->
-    if (name == 'Bob') {
-        println("YES")
-    }
-    println"Hello, $name!"
-}
-def numbers = [4,6,7,10]
-def evenNumbers = numbers.sort { number -> number % 2 == 0 }
-println evenNumbers
-*/
 
 /*
 //for closures
@@ -455,9 +352,11 @@ def thirdElement = numbers?[5]
 println("Third Element: $thirdElement")
 */
 
+/*
 def list1 = ['Groovy 1.8','Groovy 2.0','Groovy 2.3']
 def list2 = ['Groovy 1.8','Groovy 2.0','Groovy 2.3']
 list1 = list2
 //print list1 == list2
 print !list1.is(list2)
-print list1 !== list2
+print list1 !== list2*/
+
