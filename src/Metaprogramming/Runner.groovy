@@ -272,11 +272,8 @@ static void main(String[] args) {
             "WW600#5"  : [22],
             "WW600#6"  : [1, 6, 20, 26, 264, 306, 353, 375]
     ]
-/*
-    def data = Collections.unmodifiableMap(originalMap)*/
     def newMap = [:]
     def data = new JsonSlurper().parseText(JsonOutput.toJson(originalMap))
-
 
     originalMap.each { key, value ->
         def prefix = key.split('#')[0].replaceAll('[^A-Z]', '')
@@ -309,9 +306,10 @@ static void main(String[] args) {
         }
     }
 
-    data.each { key ->
-        def resultValue = newMap[key.key] ?: []
-        println("'$key' : after change '${resultValue}'")
+    data.each { entry ->
+        def resultValue = newMap[entry.key] ?: []
+        println("$entry : after change = ${resultValue}")
     }
+
 
 }
