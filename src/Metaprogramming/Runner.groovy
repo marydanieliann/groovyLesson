@@ -275,8 +275,10 @@ static void main(String[] args) {
     def newMap = [:]
     def data = new JsonSlurper().parseText(JsonOutput.toJson(originalMap))
 
+
     originalMap.each { key, value ->
         def prefix = key.split('#')[0].replaceAll('[^A-Z]', '')
+        //replaceAll('[0-9]','')
         def index = key.split('#')[1].toInteger()
 
         def existingEntry = newMap.find {
@@ -285,10 +287,11 @@ static void main(String[] args) {
         }
 
         if (existingEntry) {
-            if (existingEntry.value.size() >= 5 && value.size() < 5) {
+            if (existingEntry.value.size() < 10 || value.size() < 10) {
                 existingEntry.value += value
-            } else if (existingEntry.value.size() >= 5 && value.size() >= 5) {
-                newMap[key] = value
+            }
+             else if (existingEntry.value.size() >= 10 && value.size() >= 10) {
+            newMap[key] = value
             }
             /* else if (existingEntry.value.size() < 5 && value.size() > 5) {
                 existingEntry.value += value
@@ -311,5 +314,9 @@ static void main(String[] args) {
         println("$entry : after change = ${resultValue}")
     }
 
+
+    println "size of original ${originalMap.size()}"
+
+    println "size of changed one  ${newMap.size()}"
 
 }
